@@ -1,21 +1,21 @@
 import shutil
 import os
+import time
 
-#print "hola mundo "
-#Python
 
 
 def move(src, dest):
     shutil.copy(src, dest)
 
 if __name__ == '__main__':
-    for dirName, subdirList, fileList in os.walk("origen"):
+    rootDir = '.'
+    for dirName, subdirList, fileList in os.walk(rootDir):
         print('Directorio encontrado: %s' % dirName)
         for fname in fileList:
-            #print "hola mundo"
-            print fname
-            #print('\t%s' % fname)
-            move("origen\  fname","destino")
+            if fname != "Copiar.py":
+                print fname
+                move(fname,"..\destino")
+                time.sleep(2)
 
 
 
